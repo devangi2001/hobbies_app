@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "806125544826",
+    "project_id": "hobbies-feb41",
+    "storage_bucket": "hobbies-feb41.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:806125544826:android:4aa524480c9e284c4062c3",
+        "android_client_info": {
+          "package_name": "com.example.hobbies"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "806125544826-uqacog4j7mkk6ht5eidn270rub1l5c9f.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB_-UdA_KimbdT97HBOH4COP7essyS6eys"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "806125544826-uqacog4j7mkk6ht5eidn270rub1l5c9f.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
