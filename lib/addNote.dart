@@ -23,7 +23,7 @@ class _AddNoteState extends State<AddNote> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("Create Notes"),
+      appBar: AppBar(title: Text("Write your hobbies"),
       ),
       body: Container(
         margin: EdgeInsets.symmetric(horizontal: 10, vertical: 10),

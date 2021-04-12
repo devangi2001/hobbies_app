@@ -1,7 +1,7 @@
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:hobbies/HomeScreen.dart';
+import 'package:hobbies/addNote.dart';
 
 class AuthenticationScreen extends StatefulWidget {
   @override
@@ -26,10 +26,10 @@ class _AuthenticationScreenState extends State<AuthenticationScreen> {
         accessToken: googleAuth.accessToken,
         idToken: googleAuth.idToken,
       );
-      
+
       await firebaseAuth.signInWithCredential(credential);
 
-      Navigator.push(context, MaterialPageRoute(builder: (_) => HomeScreen()));
+      Navigator.push(context, MaterialPageRoute(builder: (_) => AddNote()));
     } catch (e) {
       print(e);
     }

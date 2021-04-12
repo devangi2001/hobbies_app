@@ -1,21 +1,24 @@
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:hobbies/addNote.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
 import 'auth.dart';
 
-
 // ignore: must_be_immutable
 class HomeScreen extends StatefulWidget {
-  
+  // final FirebaseUser User;
+
   @override
   HomeScreenState createState() => HomeScreenState();
 }
 
 final FirebaseAuth firebaseAuth = FirebaseAuth.instance;
 final GoogleSignIn _googleSignIn = GoogleSignIn();
-  final FirebaseAuth _auth = FirebaseAuth.instance;
+final FirebaseAuth _auth = FirebaseAuth.instance;
+final User user =  _auth.currentUser;
+final String email = user.email;
+  
+  
 
 class HomeScreenState extends State<HomeScreen> {
   final ref = FirebaseFirestore.instance
@@ -39,13 +42,13 @@ class HomeScreenState extends State<HomeScreen> {
           centerTitle: true,
           actions: [TextButton(onPressed:(){signOut();}, child: Text("SIGN OUT", style: TextStyle(color: Colors.white),),)],
         ),
-        floatingActionButton: FloatingActionButton(
-          child: Icon(Icons.add),
-          onPressed: () {
-            Navigator.push(
-                context, MaterialPageRoute(builder: (_) => AddNote()));
-          },
-        ),
+        // floatingActionButton: FloatingActionButton(
+        //   child: Icon(Icons.add),
+        //   onPressed: () {
+        //     Navigator.push(
+        //         context, MaterialPageRoute(builder: (_) => AddNote()));
+        //   },
+        // ),
         
         body: StreamBuilder(
             stream: ref.snapshots(),
@@ -66,6 +69,7 @@ class HomeScreenState extends State<HomeScreen> {
                           mainAxisAlignment: MainAxisAlignment.center,
                           children: [
                             Text("NAME:" + snapshot.data.docs[index].data()['name'], style: TextStyle(color: Colors.black, fontSize: 15),),
+                            Text("$email"),
                             Text("HOBBIES:" +snapshot.data.docs[index].data()['hobby'],style: TextStyle(color: Colors.black, fontSize: 15),)
                           ],
                         ),
